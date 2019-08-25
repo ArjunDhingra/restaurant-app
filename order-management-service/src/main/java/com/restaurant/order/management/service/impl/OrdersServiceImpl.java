@@ -46,7 +46,7 @@ public class OrdersServiceImpl implements OrdersService {
 			order.setOrderPrice(price);
 			repository.save(order);
 		} catch (Exception e) {
-			throw new ServiceException("Unable to Update Order" );
+			throw new ServiceException("Unable to Update Order");
 		}
 
 		return "Order Updated";
@@ -58,27 +58,26 @@ public class OrdersServiceImpl implements OrdersService {
 			Optional<Order> order = repository.findById(id);
 			Order orderDetails = order.get();
 			orderDetails.setOrderStatus("Cancelled");
-			repository.save(orderDetails);	
-		} catch(Exception e) {
+			repository.save(orderDetails);
+		} catch (Exception e) {
 			throw new ServiceException("Unable to cancel order");
 		}
-		
+
 		return "Order Cancelled";
 	}
 
 	@Override
 	public List<Order> viewOrder(String userName) throws ServiceException {
-		try {
-			List<Order> orderDetails = repository.findByUserName(userName);
-			for (Order order : orderDetails) {
-				if (order.getOrderStatus().equals("Cancelled"))
-					orderDetails.remove(order);
-			}
-			return orderDetails;	
-		} catch(Exception e) {
-			throw new ServiceException("Unable to View Order");
+		List<Order> orderDetails = repository.findByUserName(userName);
+		for (Order order : orderDetails) {
+			if (order.getOrderStatus().equals("Cancelled"))
+				orderDetails.remove(order);
 		}
-		
+		if (!orderDetails.isEmpty())
+			return orderDetails;
+		else
+			throw new ServiceException("Unable to View Order");
+
 	}
 
 }

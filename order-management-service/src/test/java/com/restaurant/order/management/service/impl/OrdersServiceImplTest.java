@@ -100,20 +100,11 @@ public class OrdersServiceImplTest {
 		assertNotEquals("1", order.getItemIds().get(0));
 	}
 
-	@Test
+	@Test(expected = ServiceException.class)
 	public void viewOrderException() throws ServiceException {
-//		String userName = "dkfn";
 		List<Order> orders = new ArrayList<>();
-		List<Integer> intList = new ArrayList<>();
-		intList.add(1);
-		intList.add(2);
-		intList.add(3);
-		Order order = new Order(1, 6.0, "Tea Adda", "Arjun", "Completed", intList);
-		orders.add(order);
-//		Mockito.when(mockRepository.findByUserName(ArgumentMatchers.any(String.class))).thenReturn(orders);
-		assertEquals(true, orders.remove(order));
-//		assertNotNull(service.viewOrder(null));
-//		service.viewOrder(null);
+		Mockito.when(mockRepository.findByUserName(ArgumentMatchers.any(String.class))).thenReturn(orders);
+		service.viewOrder("");
 	}
 
 }
