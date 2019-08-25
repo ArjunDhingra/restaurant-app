@@ -28,8 +28,8 @@ public class SearchController {
 	 */
 
 	@GetMapping("/location/{location}/{startIndex}/{endIndex}")
-	public List<Restaurant> searchByLocation(@PathVariable String location, @RequestParam int startIndex,
-			@RequestParam int endIndex) throws RestaurantNotFoundException {
+	public List<Restaurant> searchByLocation(@PathVariable String location, @PathVariable int startIndex,
+			@PathVariable int endIndex) throws RestaurantNotFoundException {
 		try {
 			return service.searchByLocation(location, startIndex, endIndex);
 		} catch (ServiceException e) {
