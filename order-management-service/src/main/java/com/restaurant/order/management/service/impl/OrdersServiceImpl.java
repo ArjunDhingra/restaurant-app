@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.restaurant.order.management.entity.Order;
@@ -18,6 +19,7 @@ public class OrdersServiceImpl implements OrdersService {
 	private OrderRepository repository;
 
 	@Override
+	@Cacheable("orders")
 	public String placeOrder(Order order) throws ServiceException {
 		try {
 			Double price = 0.0;
@@ -28,7 +30,7 @@ public class OrdersServiceImpl implements OrdersService {
 			order.setOrderPrice(price);
 			repository.save(order);
 		} catch (Exception e) {
-			throw new ServiceException("Unable to place Order" + e);
+			throw new ServiceException("Unable to place Order");
 		}
 		return "Order Placed";
 
@@ -73,7 +75,7 @@ public class OrdersServiceImpl implements OrdersService {
 			if (order.getOrderStatus().equals("Cancelled"))
 				orderDetails.remove(order);
 		}
-		if (!orderDetails.isEmpty())
+		if (!orderDetails.isEmpty() || orderDetails.size() != 0)
 			return orderDetails;
 		else
 			throw new ServiceException("Unable to View Order");

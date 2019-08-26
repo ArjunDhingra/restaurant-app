@@ -39,15 +39,6 @@ public class SearchServiceImplTest {
 				ArgumentMatchers.any(Pageable.class))).thenReturn(restaurantList);
 		assertEquals(restaurantList, searchService.searchByLocation("Banashankari", 1, 1));
 	}
-
-	/*
-	 * @Test(expected=Exception.class) public void searchByLocationException()
-	 * throws RestaurantNotFoundException { String location="Banashankari"; //
-	 * Mockito.when(mockRepository.findByRestaurantLocation(ArgumentMatchers.any(
-	 * String.class)).thenThrow(new Exception());
-	 * //Mockito.when(mockRepository.save(Mockito.any(Order.class))).thenThrow(new
-	 * OrderNotFoundException(null)); searchService.searchByLocation(location); }
-	 */
 	@Test
 	public void testSearchByDistance() throws ServiceException {
 		List<Restaurant> restaurantList = new ArrayList<>();
@@ -59,15 +50,6 @@ public class SearchServiceImplTest {
 		assertEquals(restaurantList, searchService.searchByDistance("12km", 1, 1));
 	}
 
-	/*
-	 * @Test(expected=Exception.class) public void searchByDistanceException()
-	 * throws RestaurantNotFoundException { String distance="12km";
-	 * Mockito.when(mockRepository.findById(Mockito.anyLong())).thenThrow(new
-	 * Exception());
-	 * //Mockito.when(mockRepository.save(Mockito.any(Order.class))).thenThrow(new
-	 * OrderNotFoundException(null)); searchService.searchByDistance(distance); }
-	 */
-
 	@Test
 	public void testSearchByCuisine() throws ServiceException {
 		List<Restaurant> restaurantList = new ArrayList<>();
@@ -78,15 +60,6 @@ public class SearchServiceImplTest {
 				.thenReturn(restaurantList);
 		assertEquals(restaurantList, searchService.searchByCuisine("Indian", 1, 1));
 	}
-
-	/*
-	 * @Test(expected=Exception.class) public void searchByCuisineException() throws
-	 * RestaurantNotFoundException { String cuisine="Indian";
-	 * Mockito.when(mockRepository.findById(Mockito.anyLong())).thenThrow(new
-	 * Exception());
-	 * //Mockito.when(mockRepository.save(Mockito.any(Order.class))).thenThrow(new
-	 * OrderNotFoundException(null)); searchService.searchByCuisine(cuisine); }
-	 */
 
 	@Test
 	public void testSearchByName() throws ServiceException {
@@ -106,15 +79,6 @@ public class SearchServiceImplTest {
 		assertEquals(null, restaurantList.get(0).getMenu());
 
 	}
-
-	/*
-	 * @Test(expected=Exception.class) public void searchByNameException() throws
-	 * RestaurantNotFoundException { String name="Udupi";
-	 * Mockito.when(mockRepository.findById(Mockito.anyLong())).thenThrow(new
-	 * Exception());
-	 * //Mockito.when(mockRepository.save(Mockito.any(Order.class))).thenThrow(new
-	 * OrderNotFoundException(null)); searchService.searchByName(name); }
-	 */
 
 	@Test
 	public void testSearchByBudget() throws ServiceException {
@@ -136,15 +100,6 @@ public class SearchServiceImplTest {
 		assertEquals("12km", restaurantList.get(0).getDistance());
 		assertEquals("Tea Adda", restaurantList.get(0).getRestaurantName());
 	}
-
-//	@Test(expected=Exception.class)
-//	public void searchByBudgetException() throws ServiceException {
-//		double budget=1000;
-//		Mockito.when(mockRepository.findByBudget(ArgumentMatchers.any(Double.class), ArgumentMatchers.any(Pageable.class))).thenThrow(new Exception());
-//		//Mockito.when(mockRepository.save(Mockito.any(Order.class))).thenThrow(new OrderNotFoundException(null));
-//		assertNotNull(searchService.searchByBudget(budget, 1, 1));
-//		
-//	}
 
 	@Test
 	public void testSearchByRatings() throws ServiceException {

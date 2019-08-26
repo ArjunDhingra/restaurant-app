@@ -3,6 +3,7 @@ package com.restaurant.search.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,7 @@ public class SearchServiceImpl implements SearchService {
 	private RestaurantRepository repository;
 
 	@Override
+	@Cacheable("restaurants")
 	public List<Restaurant> searchByDistance(String distance, int startIndex, int endIndex) throws ServiceException {
 		Pageable pageable = PageRequest.of(startIndex, endIndex);
 		List<Restaurant> restaurants = repository.findByDistance(distance, pageable);
@@ -32,6 +34,7 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
+	@Cacheable("restaurants")
 	public List<Restaurant> searchByLocation(String location, int startIndex, int endIndex) throws ServiceException {
 		Pageable pageable = PageRequest.of(startIndex, endIndex);
 		List<Restaurant> restaurants = repository.findByRestaurantLocation(location, pageable);
@@ -42,6 +45,7 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
+	@Cacheable("restaurants")
 	public List<Restaurant> searchByCuisine(String cuisine, int startIndex, int endIndex) throws ServiceException {
 		Pageable pageable = PageRequest.of(startIndex, endIndex);
 		List<Restaurant> restaurants = repository.findByCuisine(cuisine, pageable);
@@ -52,6 +56,7 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
+	@Cacheable("restaurants")
 	public List<Restaurant> searchByName(String name, int startIndex, int endIndex) throws ServiceException {
 		Pageable pageable = PageRequest.of(startIndex, endIndex);
 		List<Restaurant> restaurants = repository.findByRestaurantName(name, pageable);
@@ -62,6 +67,7 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
+	@Cacheable("restaurants")
 	public List<Restaurant> searchByBudget(double budget, int startIndex, int endIndex) throws ServiceException {
 		Pageable pageable = PageRequest.of(startIndex, endIndex);
 		List<Restaurant> restaurants = repository.findByBudget(budget, pageable);
@@ -72,6 +78,7 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
+	@Cacheable("restaurants")
 	public List<Restaurant> searchByRatings(double ratings, int startIndex, int endIndex) throws ServiceException {
 		Pageable pageable = PageRequest.of(startIndex, endIndex);
 		List<Restaurant> restaurants = repository.findByRatings(ratings, pageable);
