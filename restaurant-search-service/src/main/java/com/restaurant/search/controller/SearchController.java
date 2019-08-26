@@ -3,6 +3,7 @@ package com.restaurant.search.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,7 @@ public class SearchController {
 	 * service.getRestaurants(restaurant); }
 	 */
 
+	@Cacheable(value="location")
 	@GetMapping("/location/{location}/{startIndex}/{endIndex}")
 	public List<Restaurant> searchByLocation(@PathVariable String location, @PathVariable int startIndex,
 			@PathVariable int endIndex) throws RestaurantNotFoundException {
