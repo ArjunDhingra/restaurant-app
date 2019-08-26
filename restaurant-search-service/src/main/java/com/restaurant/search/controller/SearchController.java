@@ -21,50 +21,50 @@ public class SearchController {
 	private SearchService service;
 
 	@GetMapping("/location/{location}/{pageindex}/{size}")
-	public List<Restaurant> searchByLocation(@PathVariable String location, @PathVariable int page,
+	public List<Restaurant> searchByLocation(@PathVariable String location, @PathVariable int pageindex,
 			@PathVariable int size) throws RestaurantNotFoundException {
 		try {
-			return service.searchByLocation(location, page, size);
+			return service.searchByLocation(location, pageindex, size);
 		} catch (ServiceException e) {
-			throw new RestaurantNotFoundException("Unable to Search Restaurant" + e);
+			throw new RestaurantNotFoundException("Unable to Search Restaurant");
 		}
 	}
 
 	@GetMapping("/distance/{distance}/{pageindex}/{size}")
-	public List<Restaurant> searchByDistance(@PathVariable String distance, @PathVariable int page,
+	public List<Restaurant> searchByDistance(@PathVariable String distance, @PathVariable int pageindex,
 			@PathVariable int size) throws RestaurantNotFoundException {
 		try {
-			return service.searchByDistance(distance, page, size);
+			return service.searchByDistance(distance, pageindex, size);
 		} catch (ServiceException e) {
 			throw new RestaurantNotFoundException("Unable to Search Restaurant");
 		}
 	}
 
 	@GetMapping("/cuisine/{cuisine}/{pageindex}/{size}")
-	public List<Restaurant> searchByCuisine(@PathVariable String cuisine, @PathVariable int page,
+	public List<Restaurant> searchByCuisine(@PathVariable String cuisine, @PathVariable int pageindex,
 			@PathVariable int size) throws RestaurantNotFoundException {
 		try {
-			return service.searchByCuisine(cuisine, page, size);
+			return service.searchByCuisine(cuisine, pageindex, size);
 		} catch (ServiceException e) {
 			throw new RestaurantNotFoundException("Unable to Search Restaurant");
 		}
 	}
 
 	@GetMapping("/name/{name}/{pageindex}/{size}")
-	public List<Restaurant> searchByName(@PathVariable String name, @PathVariable int page, @PathVariable int size)
+	public List<Restaurant> searchByName(@PathVariable String name, @PathVariable int pageindex, @PathVariable int size)
 			throws RestaurantNotFoundException {
 		try {
-			return service.searchByName(name, page, size);
+			return service.searchByName(name, pageindex, size);
 		} catch (ServiceException e) {
 			throw new RestaurantNotFoundException("Unable to Search Restaurant");
 		}
 	}
 
 	@GetMapping("/budget/{budget}/{pageindex}/{size}")
-	public List<Restaurant> searchByBudget(@PathVariable double budget, @PathVariable int page, @PathVariable int size)
+	public List<Restaurant> searchByBudget(@PathVariable double budget, @PathVariable int pageindex, @PathVariable int size)
 			throws RestaurantNotFoundException {
 		try {
-			return service.searchByBudget(budget, page, size);
+			return service.searchByBudget(budget, pageindex, size);
 		} catch (ServiceException e) {
 			throw new RestaurantNotFoundException("Unable to Search Restaurant");
 		}
@@ -72,10 +72,10 @@ public class SearchController {
 	}
 
 	@GetMapping("/ratings/{ratings}/{page}/{size}")
-	public List<Restaurant> searchByRatings(@PathVariable double ratings, @PathVariable int page,
+	public List<Restaurant> searchByRatings(@PathVariable double ratings, @PathVariable int pageindex,
 			@PathVariable int size) throws RestaurantNotFoundException {
 		try {
-			return service.searchByRatings(ratings, page, size);
+			return service.searchByRatings(ratings, pageindex, size);
 		} catch (ServiceException e) {
 			throw new RestaurantNotFoundException("Unable to Search Restaurant");
 		}
