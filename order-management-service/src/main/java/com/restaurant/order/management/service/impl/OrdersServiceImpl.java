@@ -75,7 +75,7 @@ public class OrdersServiceImpl implements OrdersService {
 			if (order.getOrderStatus().equals("Cancelled"))
 				orderDetails.remove(order);
 		}
-		if (!orderDetails.isEmpty() || orderDetails.size() != 0)
+		if (!orderDetails.isEmpty())
 			return orderDetails;
 		else
 			throw new ServiceException("Unable to View Order");

@@ -64,15 +64,6 @@ public class OrdersControllerTest {
 		assertNotNull(controller.viewOrder("Arjun"));
 	}
 	
-//	@Test
-//	public void cancelOrderException() {
-//		long id=1;
-//		Mockito.when(mock)
-//		
-//		
-//		
-//	}
-	
 	@Test(expected = OrderNotFoundException.class)
 	public void cancelOrderException() throws ServiceException {
 		Mockito.when(service.cancelOrder(ArgumentMatchers.any(Long.class))).thenThrow(new ServiceException("sfdf"));
