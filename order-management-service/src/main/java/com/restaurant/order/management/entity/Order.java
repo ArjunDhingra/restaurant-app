@@ -21,7 +21,6 @@ public class Order {
 	private String orderStatus;
 	@ElementCollection
 	private List<Integer> itemIds;
-//	private double numberOfItems;
 
 	/**
 	 * @return the orderId

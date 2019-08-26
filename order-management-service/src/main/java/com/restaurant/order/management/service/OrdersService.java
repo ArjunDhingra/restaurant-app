@@ -16,8 +16,6 @@ public interface OrdersService {
 
 	public String cancelOrder(long id) throws ServiceException;
 
-//	public ResponseEntity<List<Order>> viewOrder(String userName);
-
 	public List<Order> viewOrder(String userName) throws ServiceException;
 
 }

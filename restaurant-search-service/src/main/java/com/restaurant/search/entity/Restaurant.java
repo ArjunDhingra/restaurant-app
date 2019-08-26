@@ -11,27 +11,27 @@ import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 @Table(name = "restaurant_search")
-//@ApiModel(value = "Restaurant", description = "Restaurant resource representation")
+@ApiModel(value = "Restaurant", description = "Restaurant resource representation")
 public class Restaurant {
 
 	@Id
 	@GeneratedValue
-//	@ApiModelProperty(value = "Restaurant's Id", required = true)
+	@ApiModelProperty(value = "Restaurant's Id", required = true)
 	private long restaurantId;
-//	@ApiModelProperty(value = "Restaurant's Name", required = true)
+	@ApiModelProperty(value = "Restaurant's Name", required = true)
 	private String restaurantName;
-//	@ApiModelProperty(value = "Restaurant's Location", required = true)
+	@ApiModelProperty(value = "Restaurant's Location", required = true)
 	private String restaurantLocation;
-//	@ApiModelProperty(value = "Distance", required = true)
+	@ApiModelProperty(value = "Distance", required = true)
 	private String distance;
-//	@ApiModelProperty(value = "Restaurant's Cuisine", required = true)
+	@ApiModelProperty(value = "Restaurant's Cuisine", required = true)
 	private String cuisine;
-//	@ApiModelProperty(value = "On Average Budget", required = true)
+	@ApiModelProperty(value = "On Average Budget", required = true)
 	private double budget;
-//	@ApiModelProperty(value = "Ratings provided by users", required = true)
+	@ApiModelProperty(value = "Ratings provided by users", required = true)
 	private double ratings;
 	@OneToOne
-//	@ApiModelProperty(value = "Restaurant's Menu", required = true)
+	@ApiModelProperty(value = "Restaurant's Menu", required = true)
 	private Menu menu;
 
 	public Restaurant() {

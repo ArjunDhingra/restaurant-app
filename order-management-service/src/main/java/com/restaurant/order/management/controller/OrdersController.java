@@ -53,12 +53,6 @@ public class OrdersController {
 		return "Order Cancelled";
 	}
 
-	/*
-	 * @GetMapping("/view/{userName}") public ResponseEntity<List<Order>>
-	 * viewOrder(@PathVariable String userName){ return service.viewOrder(userName);
-	 * }
-	 */
-
 	@GetMapping("/view/{userName}")
 	public List<Order> viewOrder(@PathVariable String userName) throws OrderNotFoundException {
 		try {

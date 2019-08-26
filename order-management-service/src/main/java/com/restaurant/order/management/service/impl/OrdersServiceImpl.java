@@ -1,7 +1,9 @@
 package com.restaurant.order.management.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -70,16 +72,17 @@ public class OrdersServiceImpl implements OrdersService {
 
 	@Override
 	public List<Order> viewOrder(String userName) throws ServiceException {
-		List<Order> orderDetails = repository.findByUserName(userName);
-		for (Order order : orderDetails) {
-			if (order.getOrderStatus().equals("Cancelled"))
-				orderDetails.remove(order);
-		}
-		if (!orderDetails.isEmpty())
-			return orderDetails;
-		else
-			throw new ServiceException("Unable to View Order");
-
+			List<Order> orderDetails = new CopyOnWriteArrayList<>();
+			List<Order> orders = new ArrayList<>();
+			orderDetails = repository.findByUserName(userName);
+			for (Order order : orderDetails) {
+				if (!order.getOrderStatus().equals("Cancelled"))
+					orders.add(order);
+			}
+			if (!orders.isEmpty())
+				return orders;
+			else
+				throw new ServiceException("Unable to View Order");	
 	}
 
 }
