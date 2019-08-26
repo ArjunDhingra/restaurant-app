@@ -2,6 +2,7 @@ package com.restaurant.search.service.impl;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Pageable;
 
+import com.restaurant.search.entity.Items;
+import com.restaurant.search.entity.Menu;
 import com.restaurant.search.entity.Restaurant;
 import com.restaurant.search.exception.ServiceException;
 import com.restaurant.search.repo.RestaurantRepository;
@@ -33,7 +36,15 @@ public class SearchServiceImplTest {
 	@Test
 	public void testSearchByLocation() throws ServiceException {
 		List<Restaurant> restaurantList = new ArrayList<>();
-		Restaurant restaurant = new Restaurant(1, "Tea Adda", "Banashankari", "12km", "Indian", 1000, 3, null);
+		Menu menu = new Menu();
+		menu.setMenuId(1);
+		List<Items> items = new ArrayList<>();
+		Items item = new Items();
+		item.setItemId(1);
+		item.setPrice(1000);
+		items.add(item);
+		menu.setItems(items);
+		Restaurant restaurant = new Restaurant(1, "Tea Adda", "Banashankari", "12km", "Indian", 1000, 3, menu);
 		restaurantList.add(restaurant);
 		Mockito.when(mockRepository.findByRestaurantLocation(ArgumentMatchers.any(String.class),
 				ArgumentMatchers.any(Pageable.class))).thenReturn(restaurantList);
@@ -64,7 +75,11 @@ public class SearchServiceImplTest {
 	@Test
 	public void testSearchByName() throws ServiceException {
 		List<Restaurant> restaurantList = new ArrayList<>();
-		Restaurant restaurant = new Restaurant(1, "Tea Adda", "Banashankari", "12km", "Indian", 1000, 3, null);
+		List<Items> items = new ArrayList<>();
+		Items item = new Items(1, 1000);
+		items.add(item);
+		Menu menu = new Menu(1, items);
+		Restaurant restaurant = new Restaurant(1, "Tea Adda", "Banashankari", "12km", "Indian", 1000, 3, menu);
 		restaurantList.add(restaurant);
 		Mockito.when(mockRepository.findByRestaurantName(ArgumentMatchers.any(String.class),
 				ArgumentMatchers.any(Pageable.class))).thenReturn(restaurantList);
@@ -76,7 +91,11 @@ public class SearchServiceImplTest {
 		assertEquals(1, restaurantList.get(0).getRestaurantId());
 		assertEquals("Banashankari", restaurantList.get(0).getRestaurantLocation());
 		assertNotEquals(100.00, restaurantList.get(0).getBudget());
-		assertEquals(null, restaurantList.get(0).getMenu());
+		assertNotNull(restaurantList.get(0).getMenu());
+		assertEquals(1, restaurantList.get(0).getMenu().getMenuId());
+		assertNotNull(restaurantList.get(0).getMenu().getItems());
+		assertEquals(1, restaurantList.get(0).getMenu().getItems().get(0).getItemId());
+		assertNotEquals(100, restaurantList.get(0).getMenu().getItems().get(0).getPrice());
 
 	}
 
