@@ -2,6 +2,8 @@ package com.restaurant.search.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,8 @@ import com.restaurant.search.service.SearchService;
 @RequestMapping(path = "/restaurant/search")
 public class SearchController {
 
+	private static final Logger logger = LoggerFactory.getLogger(SearchController.class);
+
 	@Autowired
 	private SearchService service;
 
@@ -24,8 +28,10 @@ public class SearchController {
 	public List<Restaurant> searchByLocation(@PathVariable String location, @PathVariable int pageindex,
 			@PathVariable int size) throws RestaurantNotFoundException {
 		try {
+			logger.info("Search Successful");
 			return service.searchByLocation(location, pageindex, size);
 		} catch (ServiceException e) {
+			logger.error("Error while searching restaurants" + e.getMessage());
 			throw new RestaurantNotFoundException("Unable to Search Restaurant");
 		}
 	}
@@ -34,8 +40,10 @@ public class SearchController {
 	public List<Restaurant> searchByDistance(@PathVariable String distance, @PathVariable int pageindex,
 			@PathVariable int size) throws RestaurantNotFoundException {
 		try {
+			logger.info("Search Successful");
 			return service.searchByDistance(distance, pageindex, size);
 		} catch (ServiceException e) {
+			logger.error("Error while searching restaurants" + e.getMessage());
 			throw new RestaurantNotFoundException("Unable to Search Restaurant");
 		}
 	}
@@ -44,8 +52,10 @@ public class SearchController {
 	public List<Restaurant> searchByCuisine(@PathVariable String cuisine, @PathVariable int pageindex,
 			@PathVariable int size) throws RestaurantNotFoundException {
 		try {
+			logger.info("Search Successful");
 			return service.searchByCuisine(cuisine, pageindex, size);
 		} catch (ServiceException e) {
+			logger.error("Error while searching restaurants" + e.getMessage());
 			throw new RestaurantNotFoundException("Unable to Search Restaurant");
 		}
 	}
@@ -54,18 +64,22 @@ public class SearchController {
 	public List<Restaurant> searchByName(@PathVariable String name, @PathVariable int pageindex, @PathVariable int size)
 			throws RestaurantNotFoundException {
 		try {
+			logger.info("Search Successful");
 			return service.searchByName(name, pageindex, size);
 		} catch (ServiceException e) {
+			logger.error("Error while searching restaurants" + e.getMessage());
 			throw new RestaurantNotFoundException("Unable to Search Restaurant");
 		}
 	}
 
 	@GetMapping("/budget/{budget}/{pageindex}/{size}")
-	public List<Restaurant> searchByBudget(@PathVariable double budget, @PathVariable int pageindex, @PathVariable int size)
-			throws RestaurantNotFoundException {
+	public List<Restaurant> searchByBudget(@PathVariable double budget, @PathVariable int pageindex,
+			@PathVariable int size) throws RestaurantNotFoundException {
 		try {
+			logger.info("Search Successful");
 			return service.searchByBudget(budget, pageindex, size);
 		} catch (ServiceException e) {
+			logger.error("Error while searching restaurants" + e.getMessage());
 			throw new RestaurantNotFoundException("Unable to Search Restaurant");
 		}
 
@@ -75,8 +89,10 @@ public class SearchController {
 	public List<Restaurant> searchByRatings(@PathVariable double ratings, @PathVariable int pageindex,
 			@PathVariable int size) throws RestaurantNotFoundException {
 		try {
+			logger.info("Search Successful");
 			return service.searchByRatings(ratings, pageindex, size);
 		} catch (ServiceException e) {
+			logger.error("Error while searching restaurants" + e.getMessage());
 			throw new RestaurantNotFoundException("Unable to Search Restaurant");
 		}
 	}
