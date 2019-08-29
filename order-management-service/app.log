@@ -1,0 +1,95 @@
+2019-08-29 11:02:31,820 INFO com.restaurant.order.management.OrderManagementServiceApplication [main] Starting OrderManagementServiceApplication on A2MD21888 with PID 14000 (C:\Users\M1050760\Downloads\SpringBoot301\restaurant-app\restaurant-app\order-management-service\target\classes started by M1050760 in C:\Users\M1050760\Downloads\SpringBoot301\restaurant-app\restaurant-app\order-management-service)
+2019-08-29 11:02:31,829 INFO com.restaurant.order.management.OrderManagementServiceApplication [main] No active profile set, falling back to default profiles: default
+2019-08-29 11:02:34,345 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2019-08-29 11:02:34,346 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-29 11:02:34,523 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2019-08-29 11:02:34,810 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2019-08-29 11:02:39,782 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2019-08-29 11:02:39,866 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-29 11:02:39,941 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-29 11:02:39,943 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2019-08-29 11:02:40,105 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-29 11:02:40,288 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2019-08-29 11:02:49,891 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-29 11:02:50,344 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2019-08-29 11:02:50,375 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2019-08-29 11:02:50,407 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2019-08-29 11:02:50,698 INFO com.restaurant.order.management.OrderManagementServiceApplication [main] Started OrderManagementServiceApplication in 19.341 seconds (JVM running for 19.912)
+2019-08-29 11:02:59,993 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-29 11:03:32,193 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-9] Placing Order
+2019-08-29 11:03:32,208 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-9] Placing Order started
+2019-08-29 11:03:36,020 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-9] Successfully Placed Order
+2019-08-29 11:03:36,022 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-9] Order Placed
+2019-08-29 11:04:14,277 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-1] Placing Order
+2019-08-29 11:04:14,278 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-1] Placing Order started
+2019-08-29 11:04:18,246 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-1] Successfully Placed Order
+2019-08-29 11:04:18,247 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-1] Order Placed
+2019-08-29 11:04:21,306 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-3] Placing Order
+2019-08-29 11:04:21,307 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-3] Placing Order started
+2019-08-29 11:04:24,880 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-3] Successfully Placed Order
+2019-08-29 11:04:24,881 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-3] Order Placed
+2019-08-29 11:04:30,878 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-2] Placing Order
+2019-08-29 11:04:30,878 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-2] Placing Order started
+2019-08-29 11:04:34,514 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-2] Successfully Placed Order
+2019-08-29 11:04:34,515 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-2] Order Placed
+2019-08-29 11:06:28,502 INFO com.restaurant.order.management.OrderManagementServiceApplication [main] Starting OrderManagementServiceApplication on A2MD21888 with PID 6808 (C:\Users\M1050760\Downloads\SpringBoot301\restaurant-app\restaurant-app\order-management-service\target\classes started by M1050760 in C:\Users\M1050760\Downloads\SpringBoot301\restaurant-app\restaurant-app\order-management-service)
+2019-08-29 11:06:28,505 INFO com.restaurant.order.management.OrderManagementServiceApplication [main] No active profile set, falling back to default profiles: default
+2019-08-29 11:06:30,942 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2019-08-29 11:06:30,943 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-29 11:06:31,128 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2019-08-29 11:06:31,430 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2019-08-29 11:06:37,505 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2019-08-29 11:06:37,579 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-29 11:06:37,657 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-29 11:06:37,659 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2019-08-29 11:06:37,813 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-29 11:06:37,985 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2019-08-29 11:06:48,830 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-29 11:06:49,271 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2019-08-29 11:06:49,300 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2019-08-29 11:06:49,336 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2019-08-29 11:06:49,578 INFO com.restaurant.order.management.OrderManagementServiceApplication [main] Started OrderManagementServiceApplication in 21.548 seconds (JVM running for 22.096)
+2019-08-29 11:06:57,233 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-29 11:07:09,603 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-9] Order Viewed
+2019-08-29 11:07:09,655 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8081-exec-9] HHH000397: Using ASTQueryTranslatorFactory
+2019-08-29 11:07:10,450 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-9] Order Viewed Successfully
+2019-08-29 11:07:14,728 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-10] Order Viewed
+2019-08-29 11:08:05,128 INFO com.restaurant.order.management.OrderManagementServiceApplication [main] Starting OrderManagementServiceApplication on A2MD21888 with PID 10752 (C:\Users\M1050760\Downloads\SpringBoot301\restaurant-app\restaurant-app\order-management-service\target\classes started by M1050760 in C:\Users\M1050760\Downloads\SpringBoot301\restaurant-app\restaurant-app\order-management-service)
+2019-08-29 11:08:05,132 INFO com.restaurant.order.management.OrderManagementServiceApplication [main] No active profile set, falling back to default profiles: default
+2019-08-29 11:08:07,545 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2019-08-29 11:08:07,546 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-29 11:08:07,714 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2019-08-29 11:08:08,004 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2019-08-29 11:08:13,613 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2019-08-29 11:08:13,683 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-29 11:08:13,764 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-29 11:08:13,765 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2019-08-29 11:08:13,937 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-29 11:08:14,453 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2019-08-29 11:08:24,650 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-29 11:08:25,131 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2019-08-29 11:08:25,147 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2019-08-29 11:08:25,198 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2019-08-29 11:08:25,464 INFO com.restaurant.order.management.OrderManagementServiceApplication [main] Started OrderManagementServiceApplication in 20.805 seconds (JVM running for 21.356)
+2019-08-29 11:09:03,761 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-29 11:09:19,031 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-9] Cancelling Order
+2019-08-29 11:09:19,046 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-9] Cancelling Order Started
+2019-08-29 11:09:23,262 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-9] Successfully Cancelled Order
+2019-08-29 11:09:23,263 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-9] Order Cancelled
+2019-08-29 11:09:24,108 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-10] Cancelling Order
+2019-08-29 11:09:24,110 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-10] Order Cancelled
+2019-08-29 11:09:30,611 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-1] Cancelling Order
+2019-08-29 11:09:30,612 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-1] Cancelling Order Started
+2019-08-29 11:09:34,782 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-1] Successfully Cancelled Order
+2019-08-29 11:09:34,783 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-1] Order Cancelled
+2019-08-29 11:09:35,484 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-3] Cancelling Order
+2019-08-29 11:09:35,484 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-3] Order Cancelled
+2019-08-29 11:09:41,622 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-2] Cancelling Order
+2019-08-29 11:09:41,623 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-2] Cancelling Order Started
+2019-08-29 11:09:45,740 INFO com.restaurant.order.management.controller.OrdersController [http-nio-8081-exec-2] Successfully Cancelled Order

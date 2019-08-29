@@ -68,6 +68,7 @@ public class OrdersServiceImpl implements OrdersService {
 	}
 
 	@Override
+	@Cacheable(value="cancel-order")
 	public String cancelOrder(long id) throws ServiceException {
 		try {
 			logger.info("Cancelling Order Started");
@@ -85,6 +86,7 @@ public class OrdersServiceImpl implements OrdersService {
 	}
 
 	@Override
+	@Cacheable(value="view-order")
 	public List<Order> viewOrder(String userName) throws ServiceException {
 		List<Order> orderDetails = new CopyOnWriteArrayList<>();
 		List<Order> orders = new ArrayList<>();
